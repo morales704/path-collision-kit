@@ -1,0 +1,17 @@
+{
+  "name": "path-collision-kit",
+  "version": "0.1.0",
+  "description": "Appends numeric or timestamp suffixes to filenames to prevent overwriting existing files.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
