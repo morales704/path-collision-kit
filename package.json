@@ -1,6 +1,6 @@
 {
   "name": "path-collision-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Appends numeric or timestamp suffixes to filenames to prevent overwriting existing files.",
   "type": "module",
   "main": "src/index.js",
