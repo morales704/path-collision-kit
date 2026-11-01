@@ -47,3 +47,10 @@ One ambiguity worth naming: "path" could mean a full filesystem path or a bare f
 - **Case-insensitive filesystems** (macOS APFS default, Windows NTFS default). "Report.pdf" and "report.pdf" collide on disk but not in a plain `Set`. Pass a `transform` (typically `p => p.toLowerCase()`) so the existence check uses the same view the filesystem does. The returned path keeps the original case.
 - **Dotfiles.** `.bashrc` has no extension by this library's convention; the suffix goes at the end: `.bashrc (1)`.
 - **Timestamp collisions.** Two calls within the same millisecond produce the same suffix. The timestamp strategy detects this and appends a numeric fallback (`(2)`, `(3)`, …) so the result is still unique.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
